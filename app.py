@@ -2,10 +2,12 @@
 
 from flask import Flask, request, jsonify
 import requests
+import os
+
 app = Flask(__name__)
 
-BOT_ID = '980444878:AAGNvR4UA71SvvbEUmOSMEGPhwFDFu6KspI'
-CHAT_ID = '@MartianWavesNode'
+BOT_ID = os.environ['BOT_ID']
+CHAT_ID = os.environ['CHAT_ID']
 
 @app.route('/warningMessage', methods=['POST'])
 def msg():

@@ -18,6 +18,9 @@ provider:
   runtime: python3.7
   stage: dev
   region: eu-west-1
+  environment:
+    BOT_ID: ${ssm:/telegramBot/bot_id}
+    CHAT_ID: ${ssm:/telegramBot/chat_id}
 
 functions:
   app:
